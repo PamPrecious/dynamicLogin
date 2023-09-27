@@ -1,0 +1,56 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+<div class="inner-content">
+    <form>
+        <div class="form">
+        <h4 class="h4" style="color:#1a0af5 ;">
+            
+            Add Clients
+            <!-- View Client Button -->
+            <a href="/clients">
+              <button type="button" id="btn">View Clients</button>
+            </a>
+        </h4>
+        <!-- Full Name Input -->
+        <div class="form-group">
+            <label for="fullName">Full Name:</label>
+            <input type="text" class="form-control" id="fullName" name="fullName" required>
+        </div>
+       
+        <!-- Email Input -->
+        <div class="form-group">
+            <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        
+        <!-- Contact Input -->
+        <div class="form-group">
+            <label for="contact">Contact:</label>
+            <input type="tel" class="form-control" id="contact" name="contact" required>
+        </div>
+       
+        <!-- Address Input -->
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <input type="tel"  class="form-control" id="contact" name="contact" required>
+        </div>
+        
+        <!-- Service Dropdown -->
+        <div class="form-group">
+            <label for="service">Service:</label>
+        <select id="service" class="form-control" name="service">
+            <option value="service1">Service 1</option>
+            <option value="service2">Service 2</option>
+            <option value="service3">Service 3</option>
+            <!-- Add more options as needed -->
+        </select>
+        </div>
+        <br>
+        <!-- Add Client Button -->
+        <button type="submit" id="btn">Add Client</button>
+
+    </div> 
+    </form>
+</div> 
+{% endblock content %}

@@ -1,0 +1,206 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    <div class="inner-content  p-3">
+            <div class="cards">
+                <a href="/clients" style="text-decoration: none;">
+                <div class="card-single" style="background-color:#ccff0044;">
+                    <div>
+                        
+                            <h1>01</h1>
+                            <span>Clients</span>
+                        
+                    </div>
+                    <div>
+                        <span class="las la-users"></span>
+                    </div>
+                </div>
+            </a>
+
+                <a href="/users" style="text-decoration: none;">
+                <div class="card-single" style="background-color: #FFC0CB;">
+                    <div>
+                        
+                            <h1>01</h1>
+                            <span>Users</span>
+                        
+                    </div>
+                    <div>
+                        <span class="las la-users"></span>
+                    </div>
+                </div>
+                </a>
+
+                <a href="/tasks" style="text-decoration: none;">
+                <div class="card-single" style="background-color: #FFC0CB;">
+                    <div>
+                        
+                            <h1>01</h1>
+                            <span>Tasks</span>
+                        
+                    </div>
+                    <div>
+                        <span class="las la-users"></span>
+                    </div>
+                </div>
+                </a>
+
+                <a href="/reports"  style="text-decoration: none;">
+                <div class="card-single" style="background-color:#ccff0044;">
+
+                    <div>
+                             <h1>01</h1>
+                            <span>Reports</span>
+                    </div>
+                    <div>
+                        <span class="las la-users"></span>
+                    </div>
+                </div>
+            </div>
+            </a>
+            <!-- <hr> -->
+            <div class="row recently mt-4">
+                <div class="col-md-8">
+                    <div class="clients">
+                        <h4>Recently Added Clients</h4>
+                          <div class="table-section">
+                              <table class="table bg-light" id="table">
+                                      <thead class="bg-dark text-white">
+                                          <tr>
+                                              <th>#</th>
+                                              <th>Name</th>
+                                              <th>Contact</th>
+                                              <th>Address</th>
+                                              <th>Services</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr>
+                                              <td>1</td>
+                                              <td>Nalukenge Precious</td>
+                                              <td>+256702091781</td>
+                                              <td>Kyotera</td>
+                                              <td>Canada visa processing</td>
+                                          </tr>
+                                          <tr>
+                                              <td>1</td>
+                                              <td>Nalukenge Precious</td>
+                                              <td>+256702091781</td>
+                                              <td>Kyotera</td>
+                                              <td>Canada visa processing</td>
+                                          </tr>
+                                          <tr>
+                                              <td>1</td>
+                                              <td>Nalukenge Precious</td>
+                                              <td>+256702091781</td>
+                                              <td>Kyotera</td>
+                                              <td>Canada visa processing</td>
+                                          </tr>
+                                          <tr>
+                                              <td>1</td>
+                                              <td>Nalukenge Precious</td>
+                                              <td>+256702091781</td>
+                                              <td>Kyotera</td>
+                                              <td>Canada visa processing</td>
+                                          </tr>
+                                          <tr>
+                                              <td>1</td>
+                                              <td>Nalukenge Precious</td>
+                                              <td>+256702091781</td>
+                                              <td>Kyotera</td>
+                                              <td>Canada visa processing</td>
+                                          </tr>
+                                          <tr>
+                                              <td>1</td>
+                                              <td>Nalukenge Precious</td>
+                                              <td>+256702091781</td>
+                                              <td>Kyotera</td>
+                                              <td>Canada visa processing</td>
+                                          </tr>
+                                          <tr>
+                                              <td>1</td>
+                                              <td>Nalukenge Precious</td>
+                                              <td>+256702091781</td>
+                                              <td>Kyotera</td>
+                                              <td>Canada visa processing</td>
+                                          </tr>
+                                          <tr>
+                                              <td>1</td>
+                                              <td>Nalukenge Precious</td>
+                                              <td>+256702091781</td>
+                                              <td>Kyotera</td>
+                                              <td>Canada visa processing</td>
+                                          </tr>
+                                          <tr>
+                                              <td>1</td>
+                                              <td>Nalukenge Precious</td>
+                                              <td>+256702091781</td>
+                                              <td>Kyotera</td>
+                                              <td>Canada visa processing</td>
+                                          </tr>
+                                      </tbody>
+                              </table>
+                          </div>
+                      </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="tasks">
+                        <h4>Tasks Statistics</h4>
+                        <div class="card-body shadow bg-light p-2 ml-4">
+                            <div>
+                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                                <canvas id="tasksChart" width="400" height="200"></canvas>
+
+                                <script>
+                                    // JavaScript code to create and configure the donut chart
+                                    var ctx = document.getElementById('tasksChart').getContext('2d');
+                                    var completeTasks = {{ complete_tasks|default:0 }};
+                                    var pendingTasks = {{ pending_tasks|default:0 }};
+                                    
+                                    var data = {
+                                        labels: ['Complete_Tasks', 'Pending_Tasks'],
+                                        datasets: [{
+                                            data: [completeTasks, pendingTasks],
+                                            backgroundColor: ['blue', '#f53aa1'],
+                                        }]
+                                    };
+                            
+                                    var options = {
+                                        plugins: {
+                                            legend: {
+                                                display: true,
+                                            },
+                                        },
+                                    };
+                            
+                                    var myDonutChart = new Chart(ctx, {
+                                        type: 'doughnut',
+                                        data: data,
+                                        options: options,
+                                    });
+                                </script>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+            
+
+    </div>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
