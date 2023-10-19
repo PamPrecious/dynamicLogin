@@ -28,3 +28,19 @@ toggle.addEventListener('click', function(){
         body.style.transition = '2s';
     }
 })
+
+
+
+// Show the overlay
+function showOverlay() {
+    document.getElementById("overlay").style.display = "block";
+}
+
+// Hide the overlay
+function hideOverlay() {
+    document.getElementById("overlay").style.display = "none";
+}
+
+// Add event listeners to show and hide the overlay
+document.getElementById("show-overlay-button").addEventListener("click", showOverlay);
+document.getElementById("close-overlay-button").addEventListener("click", hideOverlay);

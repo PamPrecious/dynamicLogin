@@ -1,0 +1,22 @@
+{% extends 'app/base.html' %}
+
+{% block content %} 
+<div class="inner-content edit">
+    <a href="/changepassword" style="text-decoration: none; color: black;">
+    <form >
+        {% csrf_token %}
+        <div class="form-container" >
+            <!-- Full Name Input -->
+            <div class="form-group">
+                <h4">Please feed in the email you used to create an account.</h4>
+                <input type="text" class="form-control" id="email" name="email" required>
+            </div>
+            <br>
+            <a href="/passred">
+               <button type="submit" id="btn">send</button>
+            </a>
+        </div>
+    </form>
+</a>
+</div>
+{% endblock content %}  

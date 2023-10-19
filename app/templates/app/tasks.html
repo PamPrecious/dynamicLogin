@@ -19,53 +19,25 @@
                                 <th>#</th>
                                 <th>Username</th>
                                 <th>Category</th>
-                                <th>Client</th>
+                                <th>Contact</th>
                                 <th>Task</th>
+                                <th>Client</th>
                                 <th>Actions</th>
 
                             </tr>
                         </thead>
                         <tbody>
+                            {% for tasked in response %}
                             <tr>
-                                <td>1</td>
-                                <td>Nalukenge Precious</td>
-                                <td>nalukengeprecious2019@gmail.com</td>
-                                <td>+256702091781</td>
-                                <td>Kyotera</td>
-                                <td>Canada visa processing</td>
-                                
+                                <td>{{ forloop.counter }}</td>
+                                <td>{{ tasked.name }}</td>
+                                <td>{{ tasked.category }}</td>
+                                <td>{{ tasked.contact }}</td>
+                                <td>{{ tasked.task }}</td>
+                                <td>{{ tasked.client }}</td>
+                                <td></td>
                             </tr>
-
-                            <tr>
-                                <td>1</td>
-                                <td>Nalukenge Precious</td>
-                                <td>nalukengeprecious2019@gmail.com</td>
-                                <td>+256702091781</td>
-                                <td>Kyotera</td>
-                                <td>Canada visa processing</td>
-                                
-                            </tr>
-
-                            <tr>
-                                <td>1</td>
-                                <td>Nalukenge Precious</td>
-                                <td>nalukengeprecious2019@gmail.com</td>
-                                <td>+256702091781</td>
-                                <td>Kyotera</td>
-                                <td>Canada visa processing</td>
-                                
-                            </tr>
-
-                            <tr>
-                                <td>1</td>
-                                <td>Nalukenge Precious</td>
-                                <td>nalukengeprecious2019@gmail.com</td>
-                                <td>+256702091781</td>
-                                <td>Kyotera</td>
-                                <td>Canada visa processing</td>
-                                
-                            </tr>
-
+                            {% endfor %}
                         </tbody>
                 </table>
             </div>

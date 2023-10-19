@@ -13,5 +13,13 @@ urlpatterns = [
     path('linked',views.linked, name="Linked"),
     path('adduser',views.adduser, name="Adduser"),
     path('addtask',views.addtask, name="Addtask"),
+    path('submit/',views.submit, name="Submit"),
+    path('action/',views.action, name="Action"),
+    path('act/',views.act, name="Act"),
+    path('passred',views.passred, name="Passred"),
+    path('editprofile',views.editprofile, name="Editprofile"),
+    path('changepassword',views.changepassword, name="Changepassword"),
+    
+    
 
 ]

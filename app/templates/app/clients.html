@@ -27,137 +27,17 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {% for client in clients %}
                             <tr>
-                                <td>1</td>
-                                <td>Nalukenge Precious</td>
-                                <td>nalukengeprecious2019@gmail.com</td>
-                                <td>+256702091781</td>
-                                <td>Kyotera</td>
-                                <td>Canada visa processing</td>
-                                <td>2 weeks to sumbit for it</td>
+                                <td>{{ forloop.counter }}</td>
+                                <td>{{ client.name }}</td>
+                                <td>{{ client.email }}</td>
+                                <td>{{ client.contact }}</td>
+                                <td>{{ client.address }}</td>
+                                <td>{{ client.service }}</td>
+                                <td></td>
                             </tr>
-
-                            <tr>
-                                <td>1</td>
-                                <td>Nalukenge Precious</td>
-                                <td>nalukengeprecious2019@gmail.com</td>
-                                <td>+256702091781</td>
-                                <td>Kyotera</td>
-                                <td>Canada visa processing</td>
-                                <td>2 weeks to sumbit for it</td>
-                            </tr>
-
-                            <tr>
-                                <td>1</td>
-                                <td>Nalukenge Precious</td>
-                                <td>nalukengeprecious2019@gmail.com</td>
-                                <td>+256702091781</td>
-                                <td>Kyotera</td>
-                                <td>Canada visa processing</td>
-                                <td>2 weeks to sumbit for it</td>
-                            </tr>
-
-                            <tr>
-                                <td>1</td>
-                                <td>Nalukenge Precious</td>
-                                <td>nalukengeprecious2019@gmail.com</td>
-                                <td>+256702091781</td>
-                                <td>Kyotera</td>
-                                <td>Canada visa processing</td>
-                                <td>2 weeks to sumbit for it</td>
-                            </tr>
-
-                            <tr>
-                                <td>1</td>
-                                <td>Nalukenge Precious</td>
-                                <td>nalukengeprecious2019@gmail.com</td>
-                                <td>+256702091781</td>
-                                <td>Kyotera</td>
-                                <td>Canada visa processing</td>
-                                <td>2 weeks to sumbit for it</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Nalukenge Precious</td>
-                                <td>nalukengeprecious2019@gmail.com</td>
-                                <td>+256702091781</td>
-                                <td>Kyotera</td>
-                                <td>Canada visa processing</td>
-                                <td>2 weeks to sumbit for it</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Nalukenge Precious</td>
-                                <td>nalukengeprecious2019@gmail.com</td>
-                                <td>+256702091781</td>
-                                <td>Kyotera</td>
-                                <td>Canada visa processing</td>
-                                <td>2 weeks to sumbit for it</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Nalukenge Precious</td>
-                                <td>nalukengeprecious2019@gmail.com</td>
-                                <td>+256702091781</td>
-                                <td>Kyotera</td>
-                                <td>Canada visa processing</td>
-                                <td>2 weeks to sumbit for it</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Nalukenge Precious</td>
-                                <td>nalukengeprecious2019@gmail.com</td>
-                                <td>+256702091781</td>
-                                <td>Kyotera</td>
-                                <td>Canada visa processing</td>
-                                <td>2 weeks to sumbit for it</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Nalukenge Precious</td>
-                                <td>nalukengeprecious2019@gmail.com</td>
-                                <td>+256702091781</td>
-                                <td>Kyotera</td>
-                                <td>Canada visa processing</td>
-                                <td>2 weeks to sumbit for it</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Nalukenge Precious</td>
-                                <td>nalukengeprecious2019@gmail.com</td>
-                                <td>+256702091781</td>
-                                <td>Kyotera</td>
-                                <td>Canada visa processing</td>
-                                <td>2 weeks to sumbit for it</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Nalukenge Precious</td>
-                                <td>nalukengeprecious2019@gmail.com</td>
-                                <td>+256702091781</td>
-                                <td>Kyotera</td>
-                                <td>Canada visa processing</td>
-                                <td>2 weeks to sumbit for it</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Nalukenge Precious</td>
-                                <td>nalukengeprecious2019@gmail.com</td>
-                                <td>+256702091781</td>
-                                <td>Kyotera</td>
-                                <td>Canada visa processing</td>
-                                <td>2 weeks to sumbit for it</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Nalukenge Precious</td>
-                                <td>nalukengeprecious2019@gmail.com</td>
-                                <td>+256702091781</td>
-                                <td>Kyotera</td>
-                                <td>Canada visa processing</td>
-                                <td>2 weeks to sumbit for it</td>
-                            </tr>
-                            
+                            {% endfor %}
                         </tbody>
                 </table>
             </div>

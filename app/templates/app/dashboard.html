@@ -1,63 +1,65 @@
 {% extends 'app/base.html' %}
 
 {% block content %}
-    <div class="inner-content  p-3">
-            <div class="cards">
+    <div class="inner-content p-3">
+            <div class="cards m-2">
+                
                 <a href="/clients" style="text-decoration: none;">
-                <div class="card-single" style="background-color:#ccff0044;">
-                    <div>
-                        
-                            <h1>01</h1>
-                            <span>Clients</span>
-                        
+                    <div class="row card-single shadow" style="background-color:#36363444;">
+                        <div class="col-8" style="border-right: 2px solid #000;">
+                            
+                                <h1>01</h1>
+                                <span>Clients</span>
+                            
+                        </div>
+                        <div class="col-4">
+                            <span class="las la-users" style="padding-top: 10px;"></span>
+                        </div>
                     </div>
-                    <div>
-                        <span class="las la-users"></span>
-                    </div>
-                </div>
-            </a>
+                </a>
 
                 <a href="/users" style="text-decoration: none;">
-                <div class="card-single" style="background-color: #FFC0CB;">
-                    <div>
-                        
-                            <h1>01</h1>
-                            <span>Users</span>
-                        
+                    <div class="row card-single shadow" style="background-color: #36363444;">
+                        <div class="col-8" style="border-right: 2px solid #000;">
+                            
+                                <h1>01</h1>
+                                <span>Users</span>
+                            
+                        </div>
+                        <div class="col-4">
+                            <span class="las la-users" style="padding-top: 10px;"></span>
+                        </div>
                     </div>
-                    <div>
-                        <span class="las la-users"></span>
-                    </div>
-                </div>
+                    
                 </a>
 
                 <a href="/tasks" style="text-decoration: none;">
-                <div class="card-single" style="background-color: #FFC0CB;">
-                    <div>
-                        
-                            <h1>01</h1>
-                            <span>Tasks</span>
-                        
+                    <div class="row card-single shadow" style="background-color: #36363444;">
+                        <div class="col-8" style="border-right: 2px solid #000;">
+                            
+                                <h1>01</h1>
+                                <span>Tasks</span>
+                            
+                        </div>
+                        <div class="col-4">
+                            <span class="las la-users" style="padding-top: 10px;"></span>
+                        </div>
                     </div>
-                    <div>
-                        <span class="las la-users"></span>
-                    </div>
-                </div>
+                    
                 </a>
 
                 <a href="/reports"  style="text-decoration: none;">
-                <div class="card-single" style="background-color:#ccff0044;">
-
-                    <div>
-                             <h1>01</h1>
-                            <span>Reports</span>
+                    <div class="row card-single shadow" style="background-color:#000;">
+                        <div class="col-8" style="border-right: 2px solid #fff;">
+                            <h1 style="color: #ffff;">01</h1>
+                            <span style="color: #ffff;">Reports</span>
+                        </div>
+                        <div class="col-4">
+                            <span class="las la-users" style="color: #ffff; padding-top: 10px;"></span>
+                        </div>
+                        </div>
                     </div>
-                    <div>
-                        <span class="las la-users"></span>
-                    </div>
-                </div>
-            </div>
-            </a>
+                </a>
             <!-- <hr> -->
             <div class="row recently mt-4">
                 <div class="col-md-8">
@@ -69,127 +71,75 @@
                                           <tr>
                                               <th>#</th>
                                               <th>Name</th>
+                                              <th>Email</th>
                                               <th>Contact</th>
                                               <th>Address</th>
                                               <th>Services</th>
                                           </tr>
                                       </thead>
                                       <tbody>
+                                          
+                                          {% for client in clients %}
                                           <tr>
-                                              <td>1</td>
-                                              <td>Nalukenge Precious</td>
-                                              <td>+256702091781</td>
-                                              <td>Kyotera</td>
-                                              <td>Canada visa processing</td>
+                                            <td>{{ forloop.counter }}</td>
+                                            <td>{{ client.name }}</td>
+                                            <td>{{ client.email }}</td>
+                                            <td>{{ client.contact }}</td>
+                                            <td>{{ client.address }}</td>
+                                            <td>{{ client.service }}</td>
                                           </tr>
-                                          <tr>
-                                              <td>1</td>
-                                              <td>Nalukenge Precious</td>
-                                              <td>+256702091781</td>
-                                              <td>Kyotera</td>
-                                              <td>Canada visa processing</td>
-                                          </tr>
-                                          <tr>
-                                              <td>1</td>
-                                              <td>Nalukenge Precious</td>
-                                              <td>+256702091781</td>
-                                              <td>Kyotera</td>
-                                              <td>Canada visa processing</td>
-                                          </tr>
-                                          <tr>
-                                              <td>1</td>
-                                              <td>Nalukenge Precious</td>
-                                              <td>+256702091781</td>
-                                              <td>Kyotera</td>
-                                              <td>Canada visa processing</td>
-                                          </tr>
-                                          <tr>
-                                              <td>1</td>
-                                              <td>Nalukenge Precious</td>
-                                              <td>+256702091781</td>
-                                              <td>Kyotera</td>
-                                              <td>Canada visa processing</td>
-                                          </tr>
-                                          <tr>
-                                              <td>1</td>
-                                              <td>Nalukenge Precious</td>
-                                              <td>+256702091781</td>
-                                              <td>Kyotera</td>
-                                              <td>Canada visa processing</td>
-                                          </tr>
-                                          <tr>
-                                              <td>1</td>
-                                              <td>Nalukenge Precious</td>
-                                              <td>+256702091781</td>
-                                              <td>Kyotera</td>
-                                              <td>Canada visa processing</td>
-                                          </tr>
-                                          <tr>
-                                              <td>1</td>
-                                              <td>Nalukenge Precious</td>
-                                              <td>+256702091781</td>
-                                              <td>Kyotera</td>
-                                              <td>Canada visa processing</td>
-                                          </tr>
-                                          <tr>
-                                              <td>1</td>
-                                              <td>Nalukenge Precious</td>
-                                              <td>+256702091781</td>
-                                              <td>Kyotera</td>
-                                              <td>Canada visa processing</td>
-                                          </tr>
+                                          {% endfor %}
                                       </tbody>
                               </table>
                           </div>
                       </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="tasks">
-                        <h4>Tasks Statistics</h4>
-                        <div class="card-body shadow bg-light p-2 ml-4">
+                    <div class="tasks shadow">
+                        
+                        <div class="card-body shadow bg-light p-2 ml-4" style="margin-top: 100px;">
+                            <h4>Tasks Statistics</h4>
                             <div>
-                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                                <canvas id="tasksChart" width="400" height="200"></canvas>
+                                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                                    <canvas id="tasksChart" width="400" height="200"></canvas>
 
-                                <script>
-                                    // JavaScript code to create and configure the donut chart
-                                    var ctx = document.getElementById('tasksChart').getContext('2d');
-                                    var completeTasks = {{ complete_tasks|default:0 }};
-                                    var pendingTasks = {{ pending_tasks|default:0 }};
-                                    
-                                    var data = {
-                                        labels: ['Complete_Tasks', 'Pending_Tasks'],
-                                        datasets: [{
-                                            data: [completeTasks, pendingTasks],
-                                            backgroundColor: ['blue', '#f53aa1'],
-                                        }]
-                                    };
-                            
-                                    var options = {
-                                        plugins: {
-                                            legend: {
-                                                display: true,
-                                            },
-                                        },
-                                    };
-                            
-                                    var myDonutChart = new Chart(ctx, {
-                                        type: 'doughnut',
-                                        data: data,
-                                        options: options,
-                                    });
-                                </script>
+                                    <script>
+                                        // JavaScript code to create and configure the donut chart
+                                        var ctx = document.getElementById('tasksChart').getContext('2d');
+                                        var completeTasks = {{ complete_tasks|default:0 }};
+                                        var pendingTasks = {{ pending_tasks|default:0 }};
+                                        
+                                        var data = {
+                                            labels: ['Complete_Tasks', 'Pending_Tasks'],
+                                            datasets: [{
+                                                data: ['60','50'],
+                                                backgroundColor: ['blue', '#f53aa1'],
+                                            }]
+                                        };
                                 
+                                        var options = {
+                                            plugins: {
+                                                legend: {
+                                                    display: true,
+                                                },
+                                            },
+                                        };
+                                
+                                        var myDonutChart = new Chart(ctx, {
+                                            type: 'doughnut',
+                                            data: data,
+                                            options: options,
+                                        });
+                                    </script>
+                                    
                             </div>
                         </div>
 
                     </div>
                 </div>
             </div>
+           
         </div>
-
-
-            
 
     </div>
 {% endblock content %}

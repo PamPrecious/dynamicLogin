@@ -2,57 +2,68 @@
 
 {% block content %}
 <div class="inner-content">
-    <form>
+    <form action="/act/" method="POST">
+        {% csrf_token %}
         <div class="form">
         <h4 class="h4" style="color:#1a0af5 ;">
             
-            Add Clients
+            Add User's Task
             <!-- View Client Button -->
             <a href="/tasks">
               <button type="button" id="btn">View Assigned Tasks</button>
             </a>
         </h4>
         
-         <!-- Service Dropdown -->
-         <div class="form-group">
+        <div class="form-group">
             <label for="service">Select User</label>
-        <select id="service" class="form-control" name="service">
-            <option value="service1"> 1</option>
-            <option value="service2"> 2</option>
-            <option value="service3"> 3</option>
+            <select id="service" class="form-control" name="name">
+            <option>---</option>
+            {% for user in users %}
+            <option value="{{ user.name }}">{{  user.name }}</option>
+            {% endfor %}
+            <!-- Add more options as needed -->
+            </select>
+        </div>
+        
+         <div class="form-group">
+            <label for="service">Select Client</label>
+            <select id="clientname" class="form-control" name="clientname">
+            <option>---</option>
+            {% for client in clients %}
+            <option value="{{  client.name }}">{{  client.name }}</option>
+            {% endfor %}
             <!-- Add more options as needed -->
         </select>
-        </div>
+     </div>
+        
 
-        <div class="form-group">
-            <label for="service">Select Category</label>
-        <select id="service" class="form-control" name="service">
-            <option value="service1"> 1</option>
-            <option value="service2"> 2</option>
-            <option value="service3"> 3</option>
-            <!-- Add more options as needed -->
+       
+    <div class="form-group">
+        <label for="service">Select Category</label>
+        <select id="service" class="form-control" name="category">
+        <option>---</option>
+        {% for user in users %}
+        <option value="{{ user.category }}">{{  user.category }}</option>
+        {% endfor %}
+        <!-- Add more options as needed -->
         </select>
-        </div>
+    </div>
+       
 
-        <div class="form-group">
-            <label for="service">Select client</label>
-        <select id="service" class="form-control" name="service">
-            <option value="service1"> 1</option>
-            <option value="service2"> 2</option>
-            <option value="service3"> 3</option>
-            <!-- Add more options as needed -->
-        </select>
-        </div>
+    <div class="form-group">
+            <label for="fullName">Contact</label>
+            <input type="text" class="form-control" id="fullName" name="contact" required>
+    </div>
 
         <div class="form-group">
             <label for="service">Task</label>
-        <textarea name="message" class="form-control" cols="30" rows="3"></textarea>
+            <textarea name="task" class="form-control" cols="30" rows="3"></textarea>
             <!-- Add more options as needed -->
         </div>
 
-        <br>
+            <br>
         <!-- Add Client Button -->
-        <button type="submit" id="btn">Assign</button>
+             <button type="submit" id="btn">Assign</button>
 
     </div> 
     </form>

@@ -16,6 +16,8 @@
   
   
   <!-- Bootstrap CSS v5.2.1 -->
+  <!-- Include Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
@@ -37,7 +39,7 @@
             <small><h4 class="text-center mt-2" style="color:#f53aa1 ;">Turbo<span class="danger">Travelers</span></h4></small>
            
             <hr>
-            <div class="sidebar-menu">
+            <div class="sidebar-menu shadow">
             
                 <ul>
 
@@ -66,13 +68,7 @@
                             <span>Reports</span> </a>
                     </li>
 
-                    <li>
-                        
-                        <a href="/" data-content="Content 6"><span class="la la-sign-out"></span>
-                            <span>Logout</span>
-                        </a>  
-                        
-                    </li>
+                  
                 </ul>
             
             </div>
@@ -83,32 +79,103 @@
             <header>  
                 <div class="top">
                    <img src="{% static 'img/menu.png' %}"  width="30px" height="30px" alt="turbo" id="toggleSidebar">  
-                   <div class="night">
-                        <span class="la la-sun-o" id="night"></span>
-                    </div> 
-                
+                  
                 </div> 
-
-                <div class="search-wrapper">
-                    <span class="las la-search"></span>
-                    <input type="search" placeholder="search here">
+                <div class="search-container" style="width: 990px; margin: 5px;">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" id="btnbtn" type="submit">Search</button>
+                        <!-- <i class="la la-sun la-2x mt-2 pb-1" id="night" style="font-size: 20px;"></i> -->
+                    </form>
                 </div>
 
-                <div class="user-wrapper">
-                    <img src="{% static 'img/pam.jpg' %}" width="40px" height="40px" alt="turbo">
-                    <div>
-                        <h5>PamPrecious</h5>
-                        <small>SuperAdmin</small>
+                <script>
+                    // Add this JavaScript to improve the search bar functionality and style
+                    
+                    document.addEventListener("DOMContentLoaded", function() {
+                        const searchInput = document.getElementById("search-input");
+                        const searchButton = document.getElementById("search-button");
+                    
+                        // Function to perform the search
+                        function performSearch() {
+                            const searchQuery = searchInput.value.trim();
+                            if (searchQuery !== "") {
+                                // Redirect or execute your search logic here, e.g., window.location.href = `/search?query=${searchQuery}`;
+                            }
+                        }
+                    
+                        // Handle the search button click
+                        searchButton.addEventListener("click", function(e) {
+                            e.preventDefault(); // Prevent form submission
+                            performSearch();
+                        });
+                    
+                        // Handle the Enter key press in the search input
+                        searchInput.addEventListener("keydown", function(e) {
+                            if (e.key === "Enter") {
+                                e.preventDefault(); // Prevent form submission
+                                performSearch();
+                            }
+                        });
+                    });
+                    </script>
+
+                
+                <div class="dropdown">
+                     
+                    <button class="btn user-profile-btn" type="button" id="userProfileDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="las la-user-circle la-2x"></i>
+                    </button>
+
+                    <div class="dropdown-menu dropdown-menu-right user-profile-menu" aria-labelledby="userProfileDropdown">
+                        <div class="user-profile">
+                            <div>
+                                <img src="{% static 'img/pam.jpg' %}" id="sidebarMenu" alt="turbo">                               
+                        </div>
+                            <h4 class="user-name">Pam Precious</h4>
+                            <h4 class="user-name">Head of Submission</h4>
+                            <span class="user-email">pamprecious2019.com</span>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                            <div class="spice">
+                                <a class="dropdown-item" href="/editprofile" style="font-size:13px;">
+                                    <i class="las la-user-cog"></i> Edit Profile
+                                </a>
+                                <a class="dropdown-item" href="/passred" style="font-size:13px;">
+                                    <i class="las la-lock"></i> Change Password
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/" style="color: red; font-size:13px;">
+                                    <i class="las la-sign-out-alt" style="color: red;"></i> Log Out
+                                </a>
+                           </div>
                     </div>
                 </div>
+                
             </header>
             
+           
             
          <!-- inner content -->
+
             <div id="content">
                 {% block content %} 
-                {% endblock content %}     
+                {% endblock content %}   
+                
+                <div class="footer shadow">
+                    <footer style="padding-right:200px ;">
+                        <span id="currentYear"></span> TurboTravelersAgency. All Rights Reserved.
+                    </footer>
+                </div>
+
+                <script>
+                    // JavaScript to dynamically update the year in the footer
+                    const currentYearElement = document.getElementById("currentYear");
+                    const currentYear = new Date().getFullYear();
+                    currentYearElement.textContent = `@${currentYear}`;
+                </script>
             </div>
+        
         </div>
     </div>
 
@@ -126,12 +193,17 @@
   </script>
   <script src="{% static 'js/index.js' %}"></script>
 
+
   <script>
     $(document).ready(function () {
-        $("#table").DataTable();
+        $("#table").DataTable({
+            "pageLength": 5, // Set the number of rows to display per page
+            "lengthMenu": [5, 10, 25, 50]
+        });
+       
     });
-  </script>
- 
+</script>
+
 </body>
 
 </html>
